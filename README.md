@@ -1,7 +1,8 @@
 # Bootstrap2
 Página de venta de Electrodomésticos
 Romero Paola:
-    Diseño de imágenes.
     página de inicio.
+    Diseño de imágenes.
+    Contraste.
     Rutas relativas.
     Header.
