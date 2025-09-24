@@ -5,57 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <title>Inicio</title>
 </head>
 <body class="light-mode">
 
     <header>
         <div class="container-fluid p-1 bg-dark text-white">
-            <div class="d-flex justify-content-between mb-3">
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- Logo-->
                 <div class="p-1">
                     <img class="rounded-circle" src="./img/logo.png" width="200" alt="Logo de la empresa">
                 </div>
                 <!-- Aquí el contraste-->
-                <div class="p-2">
-                    <div class="form-check form-switch">
-                        <input id="modeToggle" class="form-check-input" type="checkbox" id="mySwitch" name="darkmode" value="yes" checked>
-                        <label class="form-check-label" for="mySwitch">Dark</label>
-                    </div>
+                <div class="p-2 text-center">
+                    <button id="modeToggle" class="btn btn-outline-light rounded-circle">
+                        <i id="modeIcon" class="bi bi-moon-fill"></i>
+                    </button>
                 </div>
-                <div class="p-3">
+                <div class="p-3 text-end">
                     <h1 class="bottomright">Buena Energía</h1>
-                    <p></p>
                 </div>
             </div>
         </div>
-
+      
         <!--Se agrega un buscador de palabras clave-->
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
             <div class="container-fluid">
                 <form class="d-flex">
-                    <input class="form-control me-2" type="text" placeholder="Search">
-                    <button class="btn btn-primary" type="button">Search</button>
+                    <input class="form-control me-2" type="text" placeholder="¿Qué estás buscando?">
+                    <button class="btn btn-primary" type="button">Buscar</button>
                 </form>
-                        
+                 
+                <!--Aquí fecha y hora-->
+            <div class="wrap">
+                <div class="card" role="region" aria-label="Reloj y fecha local">
+                    <p class="weekday" id="weekday">Cargando...</p>
+                    <p class="date" id="date">—</p>
+                    <p class="time" id="time" aria-live="polite" aria-atomic="true">00:00:00</p>
+                </div>
+            </div>
+
                 <!--Aquí los enlaces de navegación-->
                 <ul class="nav justify-content-end">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./pages/categoría.html">Categorías</a>
+                        <a class="nav-link active text-white" aria-current="page" href="./pages/categoría.html">Categorías</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./pages/productos.html">Productos</a>
+                        <a class="nav-link text-white" href="./pages/productos.html">Productos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./pages/contacto.html">Contacto</a>
+                        <a class="nav-link text-white" href="./pages/contacto.html">Contacto</a>
                     </li>
                 </ul>  
             </div>
         </nav>
+        
     </header>
     <main>
         <div class="container mt-3">
             <h2 class="title">¿Quienes somos?</h2>     
-            <p class="text-center">Llevamos más de 10 años en la zona equipando hogares con electrodomésticos confiables. Seleccionamos marcas líderes y trabajamos con garantías oficiales. Ofrecemos opciones de pago flexibles para que renovar tu casa sea simple y seguro. Equipá tu hogar con la mejor tecnología. Encontrás las mejores marcas en heladeras, lavarropas, cocinas y aires acondicionados, con garantía, financiación y envío rápido. Calidad, precio y atención personalizada. Comprá online o visitanos en tienda: entregas en 24hs y soporte técnico post-venta.</p>
+            <p class="text-center">Llevamos más de 10 años en la zona equipando hogares con electrodomésticos confiables. Seleccionamos marcas líderes &#174 y trabajamos con garantías oficiales. Ofrecemos opciones de pago flexibles para que renovar tu casa sea simple y seguro. Equipá tu hogar con la mejor tecnología. Encontrás las mejores marcas en heladeras, lavarropas, cocinas y aires acondicionados, con garantía, financiación y envío rápido. Calidad, precio y atención personalizada. Comprá online o visitanos en tienda: entregas en 24hs y soporte técnico post-venta.</p>
         </div>
         
         <!-- Aquí comienza el carrusel-->
@@ -95,16 +105,41 @@
             </button>
         </div>
 
-        <div>
-            <p>Envíos</p>
-            <p>Medios de pago</p>
-            <p>Preguntas frecuentes</p>
-            <p>Cambio y Devoluciones</p>
+        <div class="container-fluid mt-3">
+            <div class="row">
+                <div class="col-sm-3 p-3">
+                    <h3>Preguntas frecuentes</h3>        
+                    <img src="./img/preguntas.png" class="mx-auto d-block" style="width:20%" alt="Imagen de signo pesos">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, cum blanditiis error neque laboriosam dolores aliquam consequuntur quidem iusto eaque.</p>
+                </div>
+                <div class="col-sm-3 p-3">
+                    <h3>Cambios y Devoluciones</h3>        
+                    <img src="./img/devolucion.png" class="mx-auto d-block" style="width:25%" alt="Imagen de una caja">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, est cupiditate perferendis reiciendis illum excepturi a pariatur molestias dolores quae!</p>
+                </div>
+                <div class="col-sm-3 p-3">
+                    <h3>Envios</h3>
+                    <img src="./img/envio.png" class="mx-auto d-block" style="width:20%" alt="Imagen de un Cambión">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet vitae commodi repudiandae ex deleniti, possimus nisi. Accusantium voluptate eos beatae?</p>
+                </div>
+                <div class="col-sm-3 p-3">
+                    <h3>Medios de pago</h3>
+                    <img src="./img/pagos.png" class="mx-auto d-block" style="width:20%" alt="Imagen de signo pesos">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem dolor quam amet quia. Natus cumque aspernatur, ipsa incidunt possimus provident.</p>
+                </div>
+            </div>
         </div>
+            
     </main>
+
     <footer>
-        <p>Sigenos en nuestras redes</p><br>
-        <p>Todos los derechos reservados</p>
+
+        <div class="container-fluid p-5 bg-dark text-white text-center">
+            <h1>My First Bootstrap Page</h1>
+            <p>Sigenos en nuestras redes</p>
+            <p> &#169 Todos los derechos reservados</p>
+        </div>
+         
     </footer>
 
     <script src="./script.js"></script>

@@ -25,19 +25,43 @@
 }
 /* Aquí se da estilos al carrusel*/
 .carouselExampleCaptions{
-  transition: transform 2s ease, opacity .5s ease-out;
+    transition: transform 2s ease, opacity .5s ease-out;
 }
 .carousel-inner{
-  width: 100%;
-  height: 750px;
-  padding: 150px 10px 0px 10px; 
+    width: 100%;
+    height: 750px;
+    padding: 150px 10px 0px 10px; 
 }
 .topleft{
-  position: absolute;
-  top: 8px;
-  right: 16px;
-  font-size: 25px;
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    font-size: 25px;
 }
 h2{
-  text-align: center;
+    text-align: center;
+}
+
+/* Aquí fecha y hora*/
+
+.wrap{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.card{
+    text-align:center;
+    backdrop-filter: blur(6px);
+}
+.weekday{
+    margin:0 0 0.25rem 0;
+    font-weight:600;
+}
+.time{
+    font-size:2rem;
+}
+/* Responsive */
+@media (max-width:420px){
+    .time{ font-size:2.25rem; }
+    .card{ padding:1.5rem 1.25rem; border-radius:12px; }
 }
