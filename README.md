@@ -6,7 +6,8 @@ Romero Paola:
     Contraste.
     Rutas relativas.
     Header.
+    Footer.
 Bustamante Axel:
-    Pagina Categoria
-    Pagina Productos
-    Pagina Contacto
+    Pagina Categoria.
+    Pagina Productos.
+    Pagina Contacto.

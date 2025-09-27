@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Buscador de Palabras Clave</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    input[type="text"] {
+      padding: 8px;
+      width: 300px;
+      margin-bottom: 20px;
+    }
+    .resaltado {
+      background-color: yellow;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Buscador de Palabras Clave</h1>
+  <input type="text" id="buscador" placeholder="Escribe una palabra..." onkeyup="buscarPalabra()">
+
+  <p id="contenido">
+    Este es un ejemplo de texto para probar el buscador de palabras clave. Puedes buscar cualquier palabra dentro de este párrafo y será resaltada automáticamente.
+  </p>
+
+  <script>
+    function buscarPalabra() {
+      const textoOriginal = `Este es un ejemplo de texto para probar el buscador de palabras clave. Puedes buscar cualquier palabra dentro de este párrafo y será resaltada automáticamente.`;
+
+      const input = document.getElementById("buscador");
+      const contenido = document.getElementById("contenido");
+      const palabra = input.value.trim();
+
+      if (palabra === "") {
+        contenido.innerHTML = textoOriginal;
+        return;
+      }
+
+      // Crear expresión regular para búsqueda (sin distinción entre mayúsculas/minúsculas)
+      const regex = new RegExp(`(${palabra})`, "gi");
+
+      const nuevoContenido = textoOriginal.replace(regex, '<span class="resaltado">$1</span>');
+      contenido.innerHTML = nuevoContenido;
+    }
+  </script>
+
+</body>
+</html>

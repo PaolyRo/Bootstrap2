@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compras</title>
+</head>
+<body>
+    <form id="pago" action="">
+        <legend>Datos del comprador</legend>
+        <ol>
+            <li>
+                <label for="nombre">Nomnbre completo</label>
+                <input type="text" id="nombre" placeholder="ejemplo: Juan Perez" required autofocus>
+            </li>
+            <li>
+                <label for="email">Email</label>
+                <input type="email" id="nombre" placeholder="ejemplo@text.com" required>
+            </li>
+            <li>
+                <label for="telefono">Teléfono</label>
+                <input type="number" id="telefono" placeholder="1122334455" required>
+            </li>
+            <li>
+                <label type="text" for="provincia">Provincia</label>
+                <input type="text" id="provincia" placeholder="ejemplo: Chaco" required>
+            </li>
+            <li>
+                <label type="text" for="dirección">Dirección</label>
+                <input type="text" id="direccion" placeholder="ejemplo: Rivadavia 123" required>
+            </li>
+            <li>
+                <label type="text" for="localidad">Localidad</label>
+                <input type="text" id="localidad" placeholder="ejemplo: Quilmes" required>
+            </li>
+            <li>
+                <label for="codigoP">Código Postal</label>
+                <input type="number" id="codigoP" placeholder="ejemplo: 1101" required>
+            </li>
+        </ol>
+
+    
+        <legend>Datos de La tarjete de Crédito o Débito</legend>
+        <ol>
+            <li>
+                <label for="nombreTarjeta">Nombre de la Tarjeta</label>
+                <input id="nombreTarjeta" type="text" placeholder="Nombre que figura en la tarleta" required>
+            </li>
+            <li>
+                <label for="numeroTarjeta">Número de Tarjeta</label>
+                <input id="numeroTarjeta" type="number" placeholder="ej: 5555-4444-3333-2222" required>
+            </li>
+            <li>
+                <label for="codigo">Código</label>
+                <input id="codigo" type="number" placeholder="ej: xxx" required>
+            </li>
+            <li>
+                <label for="vencimiento">Fecha de Vencimiento</label>
+                <input id="vencimiento" type="date" required>
+            </li>
+            <li>
+                <label for="pagoTotal">Total A Pagar</label>
+                <input id="pagoTotal" type="number" placeholder="" required> 
+            </li>
+        </ol>
+        <fieldset>
+            <button type="submit">Confirmar Pedido</button>
+        </fieldset>
+    </form>
+</body>
+</html>

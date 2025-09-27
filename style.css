@@ -38,30 +38,10 @@
     right: 16px;
     font-size: 25px;
 }
-h2{
-    text-align: center;
+.demo{
+    list-style-type: none;
 }
-
-/* Aquí fecha y hora*/
-
-.wrap{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-.card{
-    text-align:center;
-    backdrop-filter: blur(6px);
-}
-.weekday{
-    margin:0 0 0.25rem 0;
-    font-weight:600;
-}
-.time{
-    font-size:2rem;
-}
-/* Responsive */
-@media (max-width:420px){
-    .time{ font-size:2.25rem; }
-    .card{ padding:1.5rem 1.25rem; border-radius:12px; }
+#carrito{
+    font-size: 35px;
+    text-shadow: 2px 2px 5px rgb(67, 17, 160);
 }
