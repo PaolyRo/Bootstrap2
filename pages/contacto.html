@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto</title>
+  <link rel="stylesheet" href="contacto.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container-fluid justify-content-between align-items-center">
+      <ul class="navbar-nav flex-row">
+        <li class="nav-item me-3"><a class="nav-link text-primary" href="../index.html">Inicio</a></li>
+        <li class="nav-item me-3"><a class="nav-link text-primary" href="../productos/categoría.html">Categorías</a></li>
+      </ul>
+      <a class="navbar-brand mx-auto" href="../index.html">
+        <img src="../img/logo.png" alt="Logo" width="120" class="rounded-circle">
+      </a>
+      <ul class="navbar-nav flex-row">
+        <li class="nav-item me-3"><a class="nav-link text-primary" href="../productos/productos.html">Productos</a></li>
+        <li class="nav-item"><a class="nav-link text-primary" href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- FORMULARIO DE CONTACTO -->
+  <main class="container my-5">
+    <h2 class="mb-4 text-center">Formulario de Contacto</h2>
+    <form id="formularioContacto">
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre completo</label>
+        <input type="text" class="form-control" id="nombre" name="nombre">
+        <div id="errorNombre" class="text-danger mt-1" style="display:none;">Solo letras, mínimo 4 caracteres.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Correo electrónico</label>
+        <input type="email" class="form-control" id="email" name="email">
+        <div id="errorEmail" class="text-danger mt-1" style="display:none;">Correo electrónico inválido.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="mensaje" class="form-label">Mensaje</label>
+        <textarea class="form-control" id="mensaje" name="mensaje" rows="5"></textarea>
+        <div id="errorMensaje" class="text-danger mt-1" style="display:none;">El mensaje debe tener al menos 10 caracteres.</div>
+      </div>
+
+      <button type="submit" class="btn btn-dark">Enviar</button>
+      <div id="successMessage" class="text-success mt-3" style="display:none;">Formulario enviado correctamente.</div>
+    </form>
+  </main>
+
+  <!-- VALIDACIÓN -->
+  <script>
+    document.getElementById('formularioContacto').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const nombre = document.getElementById('nombre');
+      const email = document.getElementById('email');
+      const mensaje = document.getElementById('mensaje');
+
+      const errorNombre = document.getElementById('errorNombre');
+      const errorEmail = document.getElementById('errorEmail');
+      const errorMensaje = document.getElementById('errorMensaje');
+      const successMessage = document.getElementById('successMessage');
+
+      let valido = true;
+
+      const nombreValor = nombre.value.trim();
+      const soloLetras = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{4,}$/;
+      if (!soloLetras.test(nombreValor)) {
+        errorNombre.style.display = 'block';
+        valido = false;
+      } else {
+        errorNombre.style.display = 'none';
+      }
+
+      const emailValor = email.value.trim();
+      const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailValido.test(emailValor)) {
+        errorEmail.style.display = 'block';
+        valido = false;
+      } else {
+        errorEmail.style.display = 'none';
+      }
+
+      const mensajeValor = mensaje.value.trim();
+      if (mensajeValor.length < 10) {
+        errorMensaje.style.display = 'block';
+        valido = false;
+      } else {
+        errorMensaje.style.display = 'none';
+      }
+
+      if (valido) {
+        successMessage.style.display = 'block';
+        nombre.value = '';
+        email.value = '';
+        mensaje.value = '';
+      } else {
+        successMessage.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>
