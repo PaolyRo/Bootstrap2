@@ -4,8 +4,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IniciarSesión</title>
+    <link rel="stylesheet" href="registro.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    
+
+    <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container-fluid justify-content-between align-items-center">
+      <ul class="navbar-nav flex-row">
+        <li class="nav-item me-3"><a class="nav-link text-primary" href="../index.html">Inicio</a></li>
+        <li class="nav-item me-3"><a class="nav-link text-primary" href="../productos/categoria.html">Categorías</a></li>
+      </ul>
+      <a class="navbar-brand mx-auto" href="../index.html">
+        <img src="../img/logo.png" alt="Logo" width="120" class="rounded-circle">
+      </a>
+      <ul class="navbar-nav flex-row">
+        <li class="nav-item me-3"><a class="nav-link text-primary" href="../productos/productos.html">Productos</a></li>
+        <li class="nav-item"><a class="nav-link text-primary" href="../pages/contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Formulario de Inicio de Sesion -->
+ <main class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form>
+            <div class="mb-3">
+            <label for="usuario" class="form-label">Nombre de usuario</label>
+            <input type="text" class="form-control" id="usuario" name="usuario">
+            <div id="errorUsuario" class="text-danger mt-1" style="display:none;">Debe tener entre 4 y 15 caracteres alfanuméricos.</div>
+            </div>
+
+            <div class="mb-3">
+            <label for="password" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="password" name="password">
+            <div id="errorPassword" class="text-danger mt-1" style="display:none;">La contraseña debe tener al menos 6 caracteres.</div>
+            </div>
+
+            <button type="submit" class="btn btn-dark">Iniciar Sesion</button>
+        <div id="successMessage" class="text-success mt-3" style="display:none;">Sesion Iniciada.</div>
+        </form>
+       </div>
+    </div>
+ </main> 
+
+ <!-- VALIDACIÓN -->
+ <script>
+  document.getElementById('formularioRegistro').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const usuario = document.getElementById('usuario');
+    const password = document.getElementById('password');
+    const confirmar = document.getElementById('confirmar');
+
+    const errorUsuario = document.getElementById('errorUsuario');
+    const errorPassword = document.getElementById('errorPassword');
+    const successMessage = document.getElementById('successMessage');
+
+    let valido = true;
+
+    const soloLetras = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,}$/;
+    const usuarioValido = /^[a-zA-Z0-9]{4,15}$/;
+
+    if (!soloLetras.test(nombre.value.trim()) || nombre.value.trim().length < 4) {
+      errorNombre.style.display = 'block';
+      valido = false;
+    } else {
+      errorNombre.style.display = 'none';
+    }
+
+    if (!soloLetras.test(apellido.value.trim())) {
+      errorApellido.style.display = 'block';
+      valido = false;
+    } else {
+      errorApellido.style.display = 'none';
+    }
+
+    if (!usuarioValido.test(usuario.value.trim())) {
+      errorUsuario.style.display = 'block';
+      valido = false;
+    } else {
+      errorUsuario.style.display = 'none';
+    }
+
+    if (password.value.trim().length < 6) {
+      errorPassword.style.display = 'block';
+      valido = false;
+    } else {
+      errorPassword.style.display = 'none';
+    }
+
+    if (confirmar.value.trim() !== password.value.trim()) {
+      errorConfirmar.style.display = 'block';
+      valido = false;
+    } else {
+      errorConfirmar.style.display = 'none';
+    }
+
+    if (valido) {
+      successMessage.style.display = 'block';
+      usuario.value = '';
+      password.value = '';
+    } else {
+      successMessage.style.display = 'none';
+    }
+  });
+</script>
+
 </body>
 </html>

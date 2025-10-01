@@ -4,6 +4,12 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
+
+.nav-pills .nav-link:hover {
+  background-color: #3300ff; /* azul Bootstrap */
+  color: #fff; /* texto blanco */
+}
+
 /*contraste*/
 .dark-mode {
     background-color: #333333;
